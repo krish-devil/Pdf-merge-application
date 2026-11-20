@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merge Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">PDF MERGE</div>
+        <span>Smart PDF Management</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h1>PDF Merge Application</h1>
+            <p>Combine multiple PDF files into one document easily.</p>
+        </section>
+
+        <section class="upload-section">
+
+            <div class="upload-box" id="dropArea">
+                <div class="upload-icon">📄</div>
+                <h2>Upload PDF Files</h2>
+                <p>Drag and drop your PDF files here</p>
+                <p>or</p>
+
+                <label for="fileInput" class="upload-btn">
+                    Browse PDF Files
+                </label>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".pdf,application/pdf"
+                    multiple
+                    hidden
+                >
+
+                <small>Only PDF files are supported</small>
+            </div>
+
+        </section>
+
+        <section class="files-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Selected Files</h2>
+                    <p id="fileCount">0 PDF files selected</p>
+                </div>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear All
+                </button>
+            </div>
+
+            <div id="fileList" class="file-list">
+                <div class="empty-state">
+                    <span>📁</span>
+                    <p>No PDF files uploaded yet.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="action-section">
+
+            <div class="summary">
+                <span>Total Files</span>
+                <strong id="totalFiles">0</strong>
+            </div>
+
+            <div class="summary">
+                <span>Total Size</span>
+                <strong id="totalSize">0 MB</strong>
+            </div>
+
+            <button id="mergeBtn" class="merge-btn" disabled>
+                Merge PDF Files
+            </button>
+
+            <p id="statusMessage" class="status"></p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>PDF Merge Application | Phase 1</p>
+        <p>Your PDF files are processed locally in your browser.</p>
+    </footer>
+
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
